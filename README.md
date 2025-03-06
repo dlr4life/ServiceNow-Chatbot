@@ -1,7 +1,7 @@
 # ServiceNow-Chatbot
 An intelligent chatbot interface for ServiceNow integration (from scratch) with advanced NLP capabilities (spaCy's blank model for modularity with NLTK for a lightweight approach) and real-time communication features.
 
-![Chatbot Interface](docs/images/chatbot-interface.png)
+![Chatbot Interface](docs/images/chat-interface.png)
 
 ## Features
 
