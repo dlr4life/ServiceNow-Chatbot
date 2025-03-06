@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="card shadow">
+        <div class="card-body text-center">
+            <h1 class="display-1 text-danger mb-4">500</h1>
+            <h2 class="mb-3">Internal Server Error</h2>
+            <p class="lead">
+                Oops! Something went wrong on our end.
+                <br>Our team has been notified and we're working to fix it.
+            </p>
+            <div class="mt-4">
+                <button onclick="toggleChat()" class="btn btn-primary me-2">
+                    <i class="fas fa-life-ring"></i> Get Help
+                </button>
+                <a href="/" class="btn btn-outline-secondary">
+                    <i class="fas fa-arrow-left"></i> Return Home
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

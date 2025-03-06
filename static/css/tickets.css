@@ -1,0 +1,360 @@
+.ticket-management {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.ticket-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    background: linear-gradient(to right, #e35200, #f46b99, #850130);
+    padding: 20px;
+    border-radius: 8px;
+    color: white;
+}
+
+.header-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.header-actions button {
+    background-color: white;
+    color: #8c1965;
+    border: none;
+    transition: transform 0.2s;
+}
+
+.header-actions button:hover {
+    transform: scale(1.05);
+    background-color: #f8f9fa;
+}
+
+.ticket-filters {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.filter-group {
+    flex: 1;
+    min-width: 200px;
+}
+
+.filter-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #8c1965;
+}
+
+.search-container {
+    position: relative;
+    flex: 1;
+    min-width: 250px;
+}
+
+.search-container input {
+    padding-right: 40px;
+    border: 2px solid #dee2e6;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    background-color: #fff;
+}
+
+.search-container input:focus {
+    border-color: #8c1965;
+    box-shadow: 0 0 0 0.2rem rgba(140, 25, 101, 0.25);
+    outline: none;
+}
+
+.search-icon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #8c1965;
+    pointer-events: none;
+    transition: color 0.3s ease;
+}
+
+.search-container input:focus + .search-icon {
+    color: #6a124a;
+}
+
+/* Add loading state for search */
+.search-container.loading .search-icon {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: translateY(-50%) rotate(0deg); }
+    100% { transform: translateY(-50%) rotate(360deg); }
+}
+
+/* Add no results message styling */
+.no-tickets-message {
+    text-align: center;
+    padding: 2rem !important;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+.no-tickets-message td {
+    color: #6c757d;
+    font-size: 1.1rem;
+}
+
+.no-tickets-message i {
+    font-size: 2rem;
+    color: #8c1965;
+    margin-bottom: 1rem;
+}
+
+.tickets-container {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.table-responsive {
+    margin-bottom: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+#ticketsTable {
+    width: 100%;
+    margin-bottom: 0;
+}
+
+#ticketsTable th {
+    background-color: #8c1965;
+    color: white;
+    padding: 15px;
+    font-weight: 500;
+}
+
+#ticketsTable th.sortable {
+    cursor: pointer;
+    user-select: none;
+}
+
+#ticketsTable th.sortable:hover {
+    background-color: #6a124a;
+}
+
+#ticketsTable th i {
+    margin-left: 5px;
+    font-size: 0.8em;
+    opacity: 0.8;
+}
+
+#ticketsTable tbody tr {
+    transition: background-color 0.2s;
+}
+
+#ticketsTable tbody tr:hover {
+    background-color: #f8f9fa;
+    transform: scale(1.01);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.priority-high {
+    color: #dc3545;
+    font-weight: 500;
+}
+
+.priority-medium {
+    color: #ffc107;
+    font-weight: 500;
+}
+
+.priority-low {
+    color: #28a745;
+    font-weight: 500;
+}
+
+.status-badge {
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.85em;
+    font-weight: 500;
+    display: inline-block;
+    text-align: center;
+    min-width: 100px;
+}
+
+.status-new {
+    background-color: #cff4fc;
+    color: #055160;
+}
+
+.status-in_progress {
+    background-color: #fff3cd;
+    color: #664d03;
+}
+
+.status-pending {
+    background-color: #e2e3e5;
+    color: #41464b;
+}
+
+.status-resolved {
+    background-color: #d1e7dd;
+    color: #0f5132;
+}
+
+.status-closed {
+    background-color: #f8f9fa;
+    color: #6c757d;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 5px;
+    justify-content: flex-end;
+}
+
+.action-buttons button {
+    padding: 4px 8px;
+    font-size: 0.875rem;
+    transition: transform 0.2s;
+}
+
+.action-buttons button:hover {
+    transform: scale(1.05);
+}
+
+#loading-spinner {
+    padding: 40px 0;
+    color: #8c1965;
+}
+
+/* Modal Styles */
+.modal {
+    z-index: 1055;
+}
+
+/* Remove conflicting backdrop styles */
+/* .modal-backdrop {
+    display: none !important;
+} */
+
+.modal-content {
+    border-radius: 8px;
+    border: none;
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.modal-dialog {
+    margin: 1.75rem auto;
+}
+
+.modal-header {
+    background: linear-gradient(to right, #e35200, #f46b99, #850130);
+    color: white;
+    border-radius: 8px 8px 0 0;
+    border: none;
+}
+
+.modal.show {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal.show .modal-dialog {
+    transform: none;
+    transition: transform 0.3s ease-out;
+}
+
+.modal-title {
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+.btn-close {
+    filter: brightness(0) invert(1);
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.form-label {
+    font-weight: 500;
+    color: #8c1965;
+}
+
+textarea.form-control {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: #8c1965;
+    box-shadow: 0 0 0 0.25rem rgba(140, 25, 101, 0.25);
+}
+
+/* Toast Notifications */
+.toast-container {
+    z-index: 1060;
+}
+
+.toast {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.toast.border-success {
+    border-left: 4px solid #28a745;
+}
+
+.toast.border-danger {
+    border-left: 4px solid #dc3545;
+}
+
+.toast.border-info {
+    border-left: 4px solid #17a2b8;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .ticket-filters {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .filter-group {
+        width: 100%;
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+    }
+
+    .status-badge {
+        min-width: 80px;
+    }
+
+    .ticket-header {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .header-actions {
+        width: 100%;
+        justify-content: center;
+    }
+} 

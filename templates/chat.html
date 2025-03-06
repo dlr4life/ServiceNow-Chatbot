@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}Chat - ServiceNow Assistant{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0">ServiceNow Assistant</h5>
+                </div>
+                <div class="card-body">
+                    <div id="messages-container" class="messages-container mb-3"></div>
+                    
+                    <div class="quick-replies mb-3">
+                        <button class="btn btn-outline-primary btn-sm" onclick="sendQuickReply('Hello')">Hello</button>
+                        <button class="btn btn-outline-primary btn-sm" onclick="sendQuickReply('I need help')">Help</button>
+                        <button class="btn btn-outline-primary btn-sm" onclick="sendQuickReply('Create a ticket')">Create Ticket</button>
+                        <button class="btn btn-outline-primary btn-sm" onclick="screenshotChat()">Save Chat</button>
+                    </div>
+                    
+                    <div class="input-group">
+                        <input type="text" id="user-input" class="form-control" placeholder="Type your message..." onkeypress="handleKeyPress(event)">
+                        <button class="btn btn-primary" onclick="sendMessage()">Send</button>
+                    </div>
+                    
+                    <div id="feedback-section" class="text-center mt-3">
+                        <p class="mb-2">Was this helpful?</p>
+                        <button class="btn btn-outline-success btn-sm" onclick="submitFeedback('yes')">👍</button>
+                        <button class="btn btn-outline-danger btn-sm" onclick="submitFeedback('no')">👎</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="https://cdn.socket.io/4.0.1/socket.io.min.js"></script>
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+{% endblock %} 

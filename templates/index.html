@@ -1,0 +1,322 @@
+{% extends "base.html" %}
+
+{% block title %}ServiceNow Chatbot{% endblock %}
+
+{% block styles %}
+<style>
+    #drop-zone { border: 2px dashed #ccc; padding: 20px; text-align: center; }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>Features of the ServiceNow Chatbot Application</h2>
+    <div class="accordion" id="featuresAccordion">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingAllFeatures">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAllFeatures" aria-expanded="false" aria-controls="collapseAllFeatures">
+                    Features
+                </button>
+            </h2>
+            <div id="collapseAllFeatures" class="accordion-collapse collapse" aria-labelledby="headingAllFeatures" data-bs-parent="#featuresAccordion">
+                <div class="accordion-body">
+                    <h4 class="section-title">Comprehensive Application Features</h4>
+                    <ul class="feature-list">
+                        <li><strong>Core Communication Features:</strong>
+                            <ul>
+                                <li><strong>Real-time Chat System:</strong>
+                                    <ul>
+                                        <li>WebSocket-powered instant messaging with real-time updates</li>
+                                        <li>Message history persistence and retrieval</li>
+                                        <li>Live typing indicators and read receipts</li>
+                                        <li>Rich message formatting and multimedia support</li>
+                                        <li>Emoji and quick reaction support</li>
+                                        <li>Chat transcript export and saving capabilities</li>
+                                    </ul>
+                                </li>
+                                <li><strong>ServiceNow Integration:</strong>
+                                    <ul>
+                                        <li>Seamless ticket creation and management</li>
+                                        <li>Real-time ticket status updates and notifications</li>
+                                        <li>Priority-based ticket routing and escalation</li>
+                                        <li>Automated ticket categorization and assignment</li>
+                                        <li>SLA tracking and breach notifications</li>
+                                        <li>Integrated knowledge base article suggestions</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li><strong>Security and Session Management:</strong>
+                            <ul>
+                                <li><strong>Authentication and Authorization:</strong>
+                                    <ul>
+                                        <li>Secure user authentication with password hashing</li>
+                                        <li>Role-based access control (RBAC)</li>
+                                        <li>JWT token-based session management</li>
+                                        <li>CSRF protection and XSS prevention</li>
+                                        <li>Rate limiting and brute force protection</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Data Protection:</strong>
+                                    <ul>
+                                        <li>End-to-end encryption for sensitive data</li>
+                                        <li>Secure data storage and transmission</li>
+                                        <li>Regular automated database backups</li>
+                                        <li>Data retention policy enforcement</li>
+                                        <li>GDPR and data privacy compliance</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li><strong>Advanced AI and NLP Capabilities:</strong>
+                            <ul>
+                                <li><strong>Natural Language Processing:</strong>
+                                    <ul>
+                                        <li>Entity recognition for IT terms and technical concepts</li>
+                                        <li>Advanced sentiment analysis with context awareness</li>
+                                        <li>Intent classification with confidence scoring</li>
+                                        <li>Multi-language support with automatic detection</li>
+                                        <li>Contextual memory for improved conversation flow</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Intelligent Response System:</strong>
+                                    <ul>
+                                        <li>Dynamic response generation based on context</li>
+                                        <li>Smart quick reply suggestions</li>
+                                        <li>Automated conversation summarization</li>
+                                        <li>Proactive issue identification</li>
+                                        <li>Learning from user feedback and interactions</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li><strong>Technical Infrastructure:</strong>
+                            <ul>
+                                <li><strong>Database Management:</strong>
+                                    <ul>
+                                        <li>SQLite database with async operations</li>
+                                        <li>Automated backup and restore functionality</li>
+                                        <li>Data migration and version control</li>
+                                        <li>Query optimization and caching</li>
+                                        <li>Transaction management and rollback support</li>
+                                    </ul>
+                                </li>
+                                <li><strong>System Performance:</strong>
+                                    <ul>
+                                        <li>Response time optimization and monitoring</li>
+                                        <li>Load balancing and scalability features</li>
+                                        <li>Memory management and resource optimization</li>
+                                        <li>Caching strategies for improved performance</li>
+                                        <li>Real-time system health monitoring</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li><strong>User Experience and Interface:</strong>
+                            <ul>
+                                <li><strong>Responsive Design:</strong>
+                                    <ul>
+                                        <li>Mobile-first, responsive layout</li>
+                                        <li>Cross-browser compatibility</li>
+                                        <li>Progressive web app capabilities</li>
+                                        <li>Offline mode support</li>
+                                        <li>Touch-friendly interface elements</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Accessibility:</strong>
+                                    <ul>
+                                        <li>WCAG 2.1 compliance</li>
+                                        <li>Screen reader compatibility</li>
+                                        <li>Keyboard navigation support</li>
+                                        <li>High contrast mode</li>
+                                        <li>Font size adjustment options</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li><strong>Analytics and Reporting:</strong>
+                            <ul>
+                                <li><strong>User Analytics:</strong>
+                                    <ul>
+                                        <li>Detailed usage statistics and patterns</li>
+                                        <li>User satisfaction metrics</li>
+                                        <li>Feature adoption tracking</li>
+                                        <li>Session duration and engagement metrics</li>
+                                        <li>Custom event tracking and analysis</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Performance Metrics:</strong>
+                                    <ul>
+                                        <li>Response time monitoring</li>
+                                        <li>Error rate tracking and analysis</li>
+                                        <li>System resource utilization</li>
+                                        <li>API performance metrics</li>
+                                        <li>Real-time system health dashboard</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li><strong>Customization and Configuration:</strong>
+                            <ul>
+                                <li><strong>User Preferences:</strong>
+                                    <ul>
+                                        <li>Customizable UI themes and layouts</li>
+                                        <li>Notification preferences</li>
+                                        <li>Language and locale settings</li>
+                                        <li>Time zone and date format options</li>
+                                        <li>Accessibility preferences</li>
+                                    </ul>
+                                </li>
+                                <li><strong>System Settings:</strong>
+                                    <ul>
+                                        <li>AI behavior configuration</li>
+                                        <li>Security policy management</li>
+                                        <li>Integration settings</li>
+                                        <li>Backup and maintenance schedules</li>
+                                        <li>Performance optimization options</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4 class="section-title">Advanced AI Configuration</h4>
+                    <ul class="feature-list">
+                        <li><strong>AI Processing Settings:</strong>
+                            <ul>
+                                <li>Adjustable confidence thresholds for response accuracy</li>
+                                <li>Entity recognition sensitivity controls</li>
+                                <li>Sentiment analysis depth configuration</li>
+                                <li>Context memory duration settings</li>
+                                <li>Language processing model selection</li>
+                            </ul>
+                        </li>
+                        <li><strong>Response Customization:</strong>
+                            <ul>
+                                <li>Response style selection (concise/detailed/technical)</li>
+                                <li>Custom response templates and formatting</li>
+                                <li>Automated response prioritization rules</li>
+                                <li>Knowledge base integration preferences</li>
+                                <li>Quick reply customization options</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <h2>Drag & Drop</h2>
+<div id="drop-zone">Drop your message here</div> -->
+
+<div id="settings">
+    <div id="settings-content">
+        <div class="accordion" id="settingsAccordion">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingNLPSettings">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNLPSettings" aria-expanded="false" aria-controls="collapseNLPSettings">
+                        NLP Settings
+                    </button>
+                </h2>
+                <div id="collapseNLPSettings" class="accordion-collapse collapse" aria-labelledby="headingNLPSettings" data-bs-parent="#settingsAccordion">
+                    <div class="accordion-body">
+                        <form id="settingsForm">
+                            <div class="form-group">
+                                <label for="sessionTimeout">Session Timeout (minutes):</label>
+                                <input type="number" 
+                                       id="sessionTimeout" 
+                                       name="sessionTimeout" 
+                                       min="1" 
+                                       max="60" 
+                                       required
+                                       aria-label="Session timeout in minutes"
+                                       value="10">
+                            </div>
+
+                            <div class="form-group">
+                                <label>NLP Processing:</label>
+                                <div class="checkbox-group">
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="entityRecognition" name="entityRecognition" checked>
+                                        <label for="entityRecognition">Entity Recognition</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="sentimentAnalysis" name="sentimentAnalysis">
+                                        <label for="sentimentAnalysis">Sentiment Analysis</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="responseStyle">Response Style:</label>
+                                <select id="responseStyle" name="responseStyle">
+                                    <option value="concise">Concise</option>
+                                    <option value="detailed">Detailed</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="confidenceThreshold">Confidence Threshold:</label>
+                                <input type="range" id="confidenceThreshold" name="confidenceThreshold" 
+                                       min="0" max="1" step="0.1" value="0.7">
+                                <span id="thresholdValue">0.7</span>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Advanced Features:</label>
+                                <div class="checkbox-group">
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="contextMemory" name="contextMemory" checked>
+                                        <label for="contextMemory">Conversation Context Memory</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="autoSummarization" name="autoSummarization">
+                                        <label for="autoSummarization">Automatic Summarization</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="profanityFilter" name="profanityFilter" checked>
+                                        <label for="profanityFilter">Profanity Filtering</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="languageSupport">Language Support:</label>
+                                <select id="languageSupport" name="languageSupport" multiple>
+                                    <option value="en" selected>English</option>
+                                    <option value="es">Spanish</option>
+                                    <option value="fr">French</option>
+                                    <option value="de">German</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="memoryDuration">Context Memory Duration:</label>
+                                <select id="memoryDuration" name="memoryDuration">
+                                    <option value="short">Short-term (5 messages)</option>
+                                    <option value="medium">Medium-term (10 messages)</option>
+                                    <option value="long">Long-term (20 messages)</option>
+                                </select>
+                            </div>
+
+                            <button type="submit">Save Settings</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<!-- <script src="static/js/script.js"></script> -->
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+{% endblock %}
